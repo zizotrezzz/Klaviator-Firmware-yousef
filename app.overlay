@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+&uart20 {
+    status = "okay";
+    current-speed = <1000000>;
+=======
+/ {
+	solenoids {
+		compatible = "gpio-leds";
+		solenoid0: solenoid_0 {
+			/* Physical Solenoid on Pin P0.13 */
+			gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+			label = "Solenoid 0";
+		};
+	};
+
+	aliases {
+		/* Point solenoid to external Pin P0.13 */
+		solenoid = &solenoid0;
+	};
+};
+
+&uart20 {
+	current-speed = <1000000>;
+>>>>>>> 14d5365fe08d6f632c2da1db03aedb55ebc4e47c
+};
